@@ -1,0 +1,14 @@
+{
+    "name": "verifiedcred",
+    "description": "A W#C Prototype Verified Credentials",
+    "version": "0.0.1",
+    "contributors": [
+        "Jeff Herb <herb.jeff@gmail.com",
+        "Gregory Rudolph <>"
+    ],
+    "devDependencies": {
+        "express": "^4.17.1",
+        "nodemon": "^2.0.7",
+        "vhost": "^3.0.2"
+    }
+}
