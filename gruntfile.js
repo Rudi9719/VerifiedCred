@@ -33,7 +33,15 @@ module.exports = function(grunt) {
                             src: ['appsSrc/wallet/index.html'], 
                             dest: './apps/wallet/', 
                             filter: 'isFile'
-                        }
+                        },
+                        // App Scripts
+                        {
+                            expand: true, 
+                            flatten: true, 
+                            src: ['appsSrc/wallet/js/**.js'], 
+                            dest: './apps/wallet/dist/js/', 
+                            filter: 'isFile'
+                        },
                     ]
                 }
             },
