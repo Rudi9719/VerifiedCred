@@ -1,0 +1,48 @@
+module.exports = function(grunt) {
+
+    require('grunt-task-loader')(grunt);
+
+    // Project configuration.
+    grunt.initConfig(
+        {
+            pkg: grunt.file.readJSON('package.json'),
+            clean: {
+                wallet: ['apps/wallet/dist']
+            },
+            copy: {
+                wallet: {
+                    files: [
+                        // Images
+                        {
+                            expand: true, 
+                            flatten: true, 
+                            src: ['appsSrc/wallet/images/**.png'], 
+                            dest: './apps/wallet/dist', 
+                            filter: 'isFile'
+                        },
+                        // Manifest
+                        {
+                            expand: true, 
+                            flatten: true, 
+                            src: ['appsSrc/wallet/manifest.json'], 
+                            dest: './apps/wallet/', 
+                            filter: 'isFile'
+                        },
+                        // Index
+                        {
+                            expand: true, 
+                            flatten: true, 
+                            src: ['appsSrc/wallet/index.html'], 
+                            dest: './apps/wallet/', 
+                            filter: 'isFile'
+                        }
+                    ]
+                }
+            },
+        }
+    );
+  
+    // Default task(s).
+    grunt.registerTask('default', ['clean', 'copy']);
+  
+  };
