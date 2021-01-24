@@ -6,9 +6,7 @@ module.exports = function(grunt) {
     grunt.initConfig(
         {
             pkg: grunt.file.readJSON('package.json'),
-            clean: {
-                wallet: ['apps/wallet/dist']
-            },
+            clean: ['apps'], 
             copy: {
                 wallet: {
                     files: [
