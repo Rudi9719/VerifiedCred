@@ -1,1 +1,5 @@
 node_modules
+
+apps/wallet/dist
+apps/wallet/index.html
+apps/wallet/manifest.json
