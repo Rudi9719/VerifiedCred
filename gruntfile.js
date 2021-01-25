@@ -42,13 +42,33 @@ module.exports = function(grunt) {
                             dest: './apps/wallet/dist/js/', 
                             filter: 'isFile'
                         },
+                        // Service Worker
+                        {
+                            expand: true, 
+                            flatten: true, 
+                            src: ['appsSrc/wallet/service-worker.js'], 
+                            dest: './apps/wallet/dist/', 
+                            filter: 'isFile'
+                        },
                     ]
                 }
+            },
+            watch: {
+                walletJS: {
+                    files: ['appsSrc/wallet/**/*.js'],
+                    tasks: ['copy:wallet'],
+                    options: {
+                        livereload: {
+                            host: 'localhost',
+                            port: 9000,
+                        }
+                    }
+                },
             },
         }
     );
   
     // Default task(s).
-    grunt.registerTask('default', ['clean', 'copy']);
+    grunt.registerTask('default', ['clean', 'copy', 'watch']);
   
   };
